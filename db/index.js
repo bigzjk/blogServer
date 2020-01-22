@@ -1,10 +1,10 @@
 // CREATE DATABASE test; 创建表
 var mysql = require('mysql');
 let config = {
-    host     : 'localhost',
+    host     : '47.98.165.188',
     user     : 'root',
-    password : 'Abc123...',
-    database : 'blogTestSql',
+    password : 'Zjk123...',
+    database : 'alkun_blog',
     port:3306,
     // multipleStatements: true//允许多条sql同时执行
 };
