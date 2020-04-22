@@ -3,7 +3,7 @@ const Tips = require('./tip')
 // 获取博客内容列表
 function getBlogList() {
     return new Promise((resolve, reject) => {
-        let sql = `SELECT title,value  FROM  bloglist`;
+        let sql = "SELECT * FROM bloglist";
          db.query(sql).then(result => {
             let body = {
                 data: result,
@@ -22,9 +22,10 @@ function getBlogList() {
 // 添加博客内容
 function addBlog(ctx = {}) {
     return new Promise((resolve, reject) => {
-        let { title, content } = ctx.request.body
-        var addSql = 'INSERT INTO bloglist(blogname,blogcont) VALUES(?,?)';
-        var addSqlParams = [title, content];
+        let { title, cont } = ctx.request.body
+        // console.log(title, cont);
+        var addSql = 'INSERT INTO bloglist(title,cont) VALUES(?,?)';
+        var addSqlParams = [title, cont];
         db.query(addSql, addSqlParams).then(resp => {
             let body = {
                 resp,
